@@ -23,3 +23,4 @@ function get_discard_company_stocks() {
 
   return $stocks;
 }
+var_dump(get_discard_company_stocks());
