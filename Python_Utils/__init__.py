@@ -1,6 +1,7 @@
-#-*- coding: utf-8 -*-
-# __init__.py
-
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+#
+"""Python Utility module"""
 
 def save_data(filename, data):
     """Save data as pkl file"""
