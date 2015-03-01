@@ -75,25 +75,6 @@ def connect_db(db, host='localhost', user='root',
     return con
 
 
-def get_db_data(sql, db, host='localhost', user='root', passwd=''):
-    """Get DB data by given SQL"""
-    import pandas.io.sql as psql
-    con = connect_db(db=db, host=host, user=user, passwd=passwd)
-    db_data = psql.read_sql(sql, con)
-    con.close()
-    return db_data
-
-
-def get_filename_frompath(path):
-    filename = path.split('/')[-1]
-    return filename
-
-
-def change_filename(filename, extension):
-    changed = ''.join(filename.split('.')[:-1]) + extension
-    return changed
-
-
 def plot_3D(X, Y, Z, color='b', marker='o',
             xlim=None, ylim=None, zlim=None,
             alpha=0.5, savefig=None, show=True):
@@ -255,3 +236,4 @@ def play_video(video_name):
     # When everything done, release the capture
     cap.release()
     cv2.destroyAllWindows()
+
