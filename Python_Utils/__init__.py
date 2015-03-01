@@ -204,11 +204,11 @@ def plot_3D_animation(X, Y, Z, n_frame=None,
     plt.close()
 
 
-def capture_camera(mirror=True, size=None):
+def capture_camera(cam=0, mirror=True, size=None):
     """Capture video from camera"""
     import cv2
     # Capture camera
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture(cam)
 
     while True:
         # Capture frame-by-frame
