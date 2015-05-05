@@ -1,3 +1,6 @@
+;; vim: set ft=lisp:
+;; -*- mode: lisp;-*-
+
 (defun square (x)
   (* x x))
 (print (square 2))
