@@ -80,14 +80,15 @@ class SVM(object):
                 plt.plot(X[i][0],X[i][1], 'bo')
         # visualize support vectors
         for n in support_vectors:
-            plt.scatter(X[n,0], X[n,1], s=80, marker='x')
+            plt.scatter(X[n,0], X[n,1], s=80, color='g', marker='x')
         # visualize discriminative plane
         x1 = np.linspace(-6, 6, 1000)
         x2 = [f(x, w, b) for x in x1]
         plt.plot(x1, x2, 'g-')
-        plt.xlim(-6, 6)
-        plt.ylim(-6, 6)
-        plt.show()
+        plt.xlim(-3, 4)
+        plt.ylim(-1.5, 2)
+        # plt.show()
+        plt.savefig('svm.png')
 
 
 def test_svm():
