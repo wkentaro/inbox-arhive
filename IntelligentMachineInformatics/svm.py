@@ -3,7 +3,8 @@
 from __future__ import print_function
 
 import numpy as np
-from sklearn.datasets import load_digits
+from sklearn.metrics import accuracy_score
+from sklearn.cross_validation import train_test_split
 from matplotlib.pyplot import *
 import matplotlib.pyplot as plt
 
@@ -60,6 +61,24 @@ class SVM(object):
         self.y_train = y
         self.w = w
 
+    def predict(self, X):
+        w = self.w
+        f = lambda x, w, b: - (w[0] / w[1]) * x - (b / w[1])
+
+        # w's 3rd index is b
+        b = w[2]
+        w = np.delete(w, 2, 0)
+
+        y = np.array([f(x[0], w, b) for x in X])
+        y = (y <= X[:, 1]).astype(int)
+        y[y == 0] = -1
+        return y
+
+    def score(self, X, y):
+        y_pred = self.predict(X)
+        score = accuracy_score(y, y_pred)
+        return score
+
     def visualize(self):
         support_vectors = self.support_vectors
         X = self.X_train
@@ -93,9 +112,12 @@ class SVM(object):
 
 def test_svm():
     X, y = dataset_fixed_cov()
+    X_train, X_test, y_train, y_test = train_test_split(X, y)
+
     clf = SVM()
-    clf.fit(X, y)
+    clf.fit(X_train, y_train)
     clf.visualize()
+    print('score:', clf.score(X_test, y_test))
 
 
 if __name__ == '__main__':
