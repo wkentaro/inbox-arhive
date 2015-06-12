@@ -11,6 +11,8 @@ from sklearn.datasets import load_digits, load_iris, fetch_mldata
 from sklearn.cross_validation import train_test_split
 from sklearn.metrics import accuracy_score
 
+from svm import dataset_fixed_cov, SVM
+
 
 class AdaBoost(object):
     def __init__(self, classifiers):
@@ -21,26 +23,26 @@ class AdaBoost(object):
         M = len(clfs)
         N = len(X)
 
-        for m in range(M):
-            print('fitting:', m)
-            clfs[m].fit(X, y)
+        for i, clf in enumerate(clfs):
+            print('fitting:', i)
+            clf.fit(X, y)
 
         w = np.ones(N) / N
         alpha = np.zeros(M)
-        for m in range(1, M):
+        scores = [(i, clf.score(X, y)) for i, clf in enumerate(clfs)]
+        for m, score in sorted(scores, key=lambda x:x[1], reverse=True):
             print('updating weight:', m)
-            Js = []
-            for m in range(M):
-                I = (clfs[m].predict(X) != y).astype(int)
-                Ji = (w * I).sum()
-                Js.append(Ji)
-            m = np.argmin(Js)
-            J = Js[m]
-
+            print('score:', score) 
+            I = (clfs[m].predict(X) != y).astype(int)
+            print('I:', I)
+            print('w:', w)
+            J = (w * I).sum()
+            print('J:', J)
             epsilon = J / w.sum()
+            print('epsion:', epsilon)
             alpha[m] = np.log((1. - epsilon) / epsilon)
-
             w = w * np.exp(alpha[m] * I)
+            w /= w.sum()
 
         self.alpha = alpha
 
@@ -61,28 +63,22 @@ class AdaBoost(object):
         score = accuracy_score(y, y_pred)
         return score
 
-dataset = fetch_mldata('MNIST original')
-X, y_tmp = dataset.data, dataset.target
-p = np.random.randint(0, len(X), 10000)
-X, y_tmp = X[p], y_tmp[p]
-y = []
-for yi in y_tmp:
-    if yi <= 4:
-        y.append(1)
-    else:
-        y.append(-1)
-X_train, X_test, y_train, y_test = train_test_split(X, y)
 
-clfs = []
-clfs.append(KNeighborsClassifier(n_neighbors=3))
-clfs.append(KNeighborsClassifier(n_neighbors=4))
-clfs.append(KNeighborsClassifier(n_neighbors=5))
-clfs.append(KNeighborsClassifier(n_neighbors=6))
-clfs.append(LogisticRegression())
+def test_adaboost():
+    X, y = dataset_fixed_cov(n=300)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5)
 
-ada = AdaBoost(classifiers=clfs)
-ada.fit(X, y)
-for clf in clfs:
-    print('score:', m, clf.score(X_test, y_test))
-score = ada.score(X_test, y_test)
-print('score:', score)
+    clfs = []
+    for i in range(30):
+        clfs.append(SVM(iterations=i, learning_rate=0.01))
+    ada = AdaBoost(classifiers=clfs)
+    ada.fit(X, y)
+    print('alpha:', ada.alpha)
+    for i, clf in enumerate(clfs):
+        print('score:', i, clf.score(X_test, y_test))
+    score = ada.score(X_test, y_test)
+    print('score:', score)
+
+
+if __name__ == '__main__':
+    test_adaboost()

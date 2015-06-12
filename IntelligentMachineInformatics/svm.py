@@ -10,25 +10,28 @@ import matplotlib.pyplot as plt
 
 
 # generate datasets
-def dataset_fixed_cov():
+def dataset_fixed_cov(n=300):
     '''Generate 2 Gaussians samples with the same covariance matrix'''
-    n, dim = 300, 2
+    dim = 2
     np.random.seed(0)
     C = np.array([[0., -0.23], [0.83, .23]])
     X = np.r_[np.dot(np.random.randn(n, dim), C),
               np.dot(np.random.randn(n, dim), C) + np.array([1, 1])]
     y = np.hstack((-np.ones(n), np.ones(n)))
-    return X, y
+    p = np.random.randint(0, len(X), len(X))
+    return X[p], y[p]
 
 
 class SVM(object):
-    def __init__(self, kernel='linear', learning_rate=0.05):
+    def __init__(self, kernel='linear', learning_rate=0.05, iterations=1000):
         self.kernel = kernel
         self.learning_rate = learning_rate
+        self.iterations = iterations
 
     def fit(self, X, y):
         kernel = self.kernel
         learning_rate = self.learning_rate
+        iterations = self.iterations
         N = len(X)
         X = np.c_[X, np.ones(N)]
         L = np.zeros((N, 1))
@@ -36,7 +39,7 @@ class SVM(object):
         if kernel == 'linear':
             kernel = lambda x, y: np.dot(x, y)
 
-        for k in range(1000):
+        for k in range(iterations):
             for i in range(N):
                 dL_i = 1. - np.dot(np.atleast_2d(y[i] * L.reshape(-1) * y),
                                 kernel(np.atleast_2d(X[i]), X.T).T)[0][0]
@@ -57,8 +60,6 @@ class SVM(object):
             w += L[i_sv] * y[i_sv] * X[i_sv]
 
         self.support_vectors = support_vectors
-        self.X_train = X
-        self.y_train = y
         self.w = w
 
     def predict(self, X):
@@ -79,10 +80,8 @@ class SVM(object):
         score = accuracy_score(y, y_pred)
         return score
 
-    def visualize(self):
+    def visualize(self, X_train, y_train):
         support_vectors = self.support_vectors
-        X = self.X_train
-        y = self.y_train
         w = self.w
         N = len(X)
         f = lambda x, w, b: - (w[0] / w[1]) * x - (b / w[1])
@@ -116,7 +115,7 @@ def test_svm():
 
     clf = SVM()
     clf.fit(X_train, y_train)
-    clf.visualize()
+    clf.visualize(X_train, y_train)
     print('score:', clf.score(X_test, y_test))
 
 
