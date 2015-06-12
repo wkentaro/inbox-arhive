@@ -83,6 +83,8 @@ class SVM(object):
     def visualize(self, X_train, y_train):
         support_vectors = self.support_vectors
         w = self.w
+        X = X_train
+        y = y_train
         N = len(X)
         f = lambda x, w, b: - (w[0] / w[1]) * x - (b / w[1])
 
