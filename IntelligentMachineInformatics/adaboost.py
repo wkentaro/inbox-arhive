@@ -34,8 +34,6 @@ class AdaBoost(object):
             print('updating weight:', m)
             print('score:', score) 
             I = (clfs[m].predict(X) != y).astype(int)
-            print('I:', I)
-            print('w:', w)
             J = (w * I).sum()
             print('J:', J)
             epsilon = J / w.sum()
@@ -69,8 +67,8 @@ def test_adaboost():
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5)
 
     clfs = []
-    for i in range(30):
-        clfs.append(SVM(iterations=i, learning_rate=0.01))
+    for i in range(10):
+        clfs.append(SVM(iterations=i+1, learning_rate=0.01))
     ada = AdaBoost(classifiers=clfs)
     ada.fit(X, y)
     print('alpha:', ada.alpha)
