@@ -34,8 +34,12 @@ def main():
 
     # parameters
     n_label = 2
-    noise_amount = 0.05
+    noise_amount = 0.0
     img_resized_shape = (5, 5)
+    print('=parameters=')
+    print('n_label:', n_label)
+    print('noise_amount:', noise_amount)
+    print('img_resized_shape:', img_resized_shape)
 
     # transform data
     dataset.data = transform_data(data=dataset.data,
@@ -43,7 +47,23 @@ def main():
                                   resized_shape=img_resized_shape,
                                   do_binarize=True,
                                   noise_amount=noise_amount)
-    print(dataset.data)
+
+    target_names = dataset.target_names[:n_label]
+    X, y = [], []
+    for t in target_names:
+        X.append(dataset.data[dataset.target == t])
+        y.append(dataset.target[dataset.target == t])
+    X = np.vstack(X)
+    y = np.hstack(y)
+    n_sample = len(X)
+    p = np.random.randint(0, n_sample, n_sample)
+    X, y = X[p], y[p]
+    print('=data=')
+    print('target_names:', target_names)
+    print('X.shape:', X.shape)
+    print('X:', X, sep='\n')
+    print('y.shape:', y.shape)
+    print('y:', y, sep='\n')
 
 
 if __name__ == '__main__':
