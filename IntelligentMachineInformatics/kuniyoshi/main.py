@@ -3,7 +3,6 @@
 
 from __future__ import print_function, division
 import numpy as np
-from sklearn.datasets import load_digits
 from sklearn.preprocessing import binarize
 from skimage.util import random_noise
 from skimage.transform import resize
@@ -30,9 +29,45 @@ def transform_data(data, img_shape, resized_shape=None,
     return np.array(transformed)
 
 
+def load_alphabet():
+    from sklearn.datasets.base import Bunch
+    T = np.array([
+        [1, 1, 1, 1, 1],
+        [0, 0, 1, 0, 0],
+        [0, 0, 1, 0, 0],
+        [0, 0, 1, 0, 0],
+        [0, 0, 1, 0, 0],
+        ])
+    I = np.array([
+        [0, 1, 1, 1, 0],
+        [0, 0, 1, 0, 0],
+        [0, 0, 1, 0, 0],
+        [0, 0, 1, 0, 0],
+        [0, 1, 1, 1, 0],
+        ])
+    L = np.array([
+        [1, 0, 0, 0, 0],
+        [1, 0, 0, 0, 0],
+        [1, 0, 0, 0, 0],
+        [1, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1],
+        ])
+    H = np.array([
+        [1, 0, 0, 0, 1],
+        [1, 0, 0, 0, 1],
+        [1, 1, 1, 1, 1],
+        [1, 0, 0, 0, 1],
+        [1, 0, 0, 0, 1],
+        ])
+    dataset = Bunch(target_names=['t','i','l','h'],
+                    target=np.array(['t','i','l','h']),
+                    data=np.array([T, I, L, H]))
+    return dataset
+
+
 def main():
     # load dataset
-    dataset = load_digits()
+    dataset = load_alphabet()
 
     # parameters
     n_label = 2
@@ -45,8 +80,8 @@ def main():
 
     # transform data
     dataset.data = transform_data(data=dataset.data,
-                                  img_shape=(8, 8),
-                                  resized_shape=img_resized_shape,
+                                  img_shape=(5, 5),
+                                  resized_shape=None,
                                   do_binarize=True,
                                   noise_amount=noise_amount)
 
@@ -70,16 +105,19 @@ def main():
 
     # fit hopfield
     hf = Hopfield()
-    hf.fit(X, y)
+    hf.fit(X, y, watch_weight=False)
 
     # recall
+    index = np.random.randint(0, n_sample)
     print('=input=')
-    input_ = X[0].reshape(img_resized_shape)
-    input_ = random_noise(X[0], mode='s&p', amount=0.05)
-    print(input_.reshape(img_resized_shape))
+    print(X[index].reshape(img_resized_shape).astype(int))
+    print('=input with noise=')
+    input_ = X[index].reshape(img_resized_shape)
+    input_ = random_noise(X[index], mode='s&p', amount=0.1)
+    print(input_.reshape(img_resized_shape).astype(int))
     print('=output=')
     ret = hf.recall(x=input_.reshape(-1), n_times=10)
-    print(ret.reshape(img_resized_shape))
+    print(ret.reshape(img_resized_shape).astype(int))
 
 
 if __name__ == '__main__':
