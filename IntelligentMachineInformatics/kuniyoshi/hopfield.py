@@ -26,3 +26,5 @@ class Hopfield(object):
         W = self.weight_
         for _ in xrange(n_times):
             x = np.dot(W, x)
+            x = np.sign(x)
+        return x
