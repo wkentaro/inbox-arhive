@@ -1,16 +1,11 @@
-=============
-eus-cheatrepo
-=============
-Cheat Repository when using euslisp and roseus.
+==============
+eus-cheatsheet
+==============
+Cheatsheet when using eus.
 
-Euslisp
-=======
 
-[SITUATION1] Creating class
----------------------------
-
-Basic class format
-^^^^^^^^^^^^^^^^^^
+Create basic class format
+=========================
 .. code-block:: lisp
 
   #!/usr/bin/env eus
@@ -38,7 +33,7 @@ the output will be::
 
 
 Get ``:a`` from ``"a"``
-^^^^^^^^^^^^^^^^^^^^^^^
+=======================
 .. code-block:: lisp
 
   (intern (string-upcase "a") "KEYWORD")
