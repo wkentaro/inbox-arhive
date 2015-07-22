@@ -1,0 +1,420 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BEDFCC0319F6DADA004767DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDFCC0219F6DADA004767DB /* AppDelegate.swift */; };
+		BEDFCC0519F6DADA004767DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDFCC0419F6DADA004767DB /* ViewController.swift */; };
+		BEDFCC0819F6DADA004767DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEDFCC0619F6DADA004767DB /* Main.storyboard */; };
+		BEDFCC0A19F6DADA004767DB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEDFCC0919F6DADA004767DB /* Images.xcassets */; };
+		BEDFCC0D19F6DADA004767DB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEDFCC0B19F6DADA004767DB /* LaunchScreen.xib */; };
+		BEDFCC1919F6DADA004767DB /* SimpleCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDFCC1819F6DADA004767DB /* SimpleCalculatorTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BEDFCC1319F6DADA004767DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BEDFCBF519F6DADA004767DB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BEDFCBFC19F6DADA004767DB;
+			remoteInfo = SimpleCalculator;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BEDFCBFD19F6DADA004767DB /* SimpleCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEDFCC0119F6DADA004767DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEDFCC0219F6DADA004767DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BEDFCC0419F6DADA004767DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BEDFCC0719F6DADA004767DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BEDFCC0919F6DADA004767DB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BEDFCC0C19F6DADA004767DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		BEDFCC1219F6DADA004767DB /* SimpleCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEDFCC1719F6DADA004767DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEDFCC1819F6DADA004767DB /* SimpleCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCalculatorTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BEDFCBFA19F6DADA004767DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEDFCC0F19F6DADA004767DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BEDFCBF419F6DADA004767DB = {
+			isa = PBXGroup;
+			children = (
+				BEDFCBFF19F6DADA004767DB /* SimpleCalculator */,
+				BEDFCC1519F6DADA004767DB /* SimpleCalculatorTests */,
+				BEDFCBFE19F6DADA004767DB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BEDFCBFE19F6DADA004767DB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BEDFCBFD19F6DADA004767DB /* SimpleCalculator.app */,
+				BEDFCC1219F6DADA004767DB /* SimpleCalculatorTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BEDFCBFF19F6DADA004767DB /* SimpleCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				BEDFCC0219F6DADA004767DB /* AppDelegate.swift */,
+				BEDFCC0419F6DADA004767DB /* ViewController.swift */,
+				BEDFCC0619F6DADA004767DB /* Main.storyboard */,
+				BEDFCC0919F6DADA004767DB /* Images.xcassets */,
+				BEDFCC0B19F6DADA004767DB /* LaunchScreen.xib */,
+				BEDFCC0019F6DADA004767DB /* Supporting Files */,
+			);
+			path = SimpleCalculator;
+			sourceTree = "<group>";
+		};
+		BEDFCC0019F6DADA004767DB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BEDFCC0119F6DADA004767DB /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BEDFCC1519F6DADA004767DB /* SimpleCalculatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				BEDFCC1819F6DADA004767DB /* SimpleCalculatorTests.swift */,
+				BEDFCC1619F6DADA004767DB /* Supporting Files */,
+			);
+			path = SimpleCalculatorTests;
+			sourceTree = "<group>";
+		};
+		BEDFCC1619F6DADA004767DB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BEDFCC1719F6DADA004767DB /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BEDFCBFC19F6DADA004767DB /* SimpleCalculator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BEDFCC1C19F6DADA004767DB /* Build configuration list for PBXNativeTarget "SimpleCalculator" */;
+			buildPhases = (
+				BEDFCBF919F6DADA004767DB /* Sources */,
+				BEDFCBFA19F6DADA004767DB /* Frameworks */,
+				BEDFCBFB19F6DADA004767DB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SimpleCalculator;
+			productName = SimpleCalculator;
+			productReference = BEDFCBFD19F6DADA004767DB /* SimpleCalculator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BEDFCC1119F6DADA004767DB /* SimpleCalculatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BEDFCC1F19F6DADA004767DB /* Build configuration list for PBXNativeTarget "SimpleCalculatorTests" */;
+			buildPhases = (
+				BEDFCC0E19F6DADA004767DB /* Sources */,
+				BEDFCC0F19F6DADA004767DB /* Frameworks */,
+				BEDFCC1019F6DADA004767DB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BEDFCC1419F6DADA004767DB /* PBXTargetDependency */,
+			);
+			name = SimpleCalculatorTests;
+			productName = SimpleCalculatorTests;
+			productReference = BEDFCC1219F6DADA004767DB /* SimpleCalculatorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BEDFCBF519F6DADA004767DB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Kentaro Wada";
+				TargetAttributes = {
+					BEDFCBFC19F6DADA004767DB = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					BEDFCC1119F6DADA004767DB = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = BEDFCBFC19F6DADA004767DB;
+					};
+				};
+			};
+			buildConfigurationList = BEDFCBF819F6DADA004767DB /* Build configuration list for PBXProject "SimpleCalculator" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BEDFCBF419F6DADA004767DB;
+			productRefGroup = BEDFCBFE19F6DADA004767DB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BEDFCBFC19F6DADA004767DB /* SimpleCalculator */,
+				BEDFCC1119F6DADA004767DB /* SimpleCalculatorTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BEDFCBFB19F6DADA004767DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEDFCC0819F6DADA004767DB /* Main.storyboard in Resources */,
+				BEDFCC0D19F6DADA004767DB /* LaunchScreen.xib in Resources */,
+				BEDFCC0A19F6DADA004767DB /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEDFCC1019F6DADA004767DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BEDFCBF919F6DADA004767DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEDFCC0519F6DADA004767DB /* ViewController.swift in Sources */,
+				BEDFCC0319F6DADA004767DB /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEDFCC0E19F6DADA004767DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEDFCC1919F6DADA004767DB /* SimpleCalculatorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BEDFCC1419F6DADA004767DB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BEDFCBFC19F6DADA004767DB /* SimpleCalculator */;
+			targetProxy = BEDFCC1319F6DADA004767DB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BEDFCC0619F6DADA004767DB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BEDFCC0719F6DADA004767DB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BEDFCC0B19F6DADA004767DB /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BEDFCC0C19F6DADA004767DB /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BEDFCC1A19F6DADA004767DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BEDFCC1B19F6DADA004767DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BEDFCC1D19F6DADA004767DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SimpleCalculator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BEDFCC1E19F6DADA004767DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SimpleCalculator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		BEDFCC2019F6DADA004767DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SimpleCalculatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimpleCalculator.app/SimpleCalculator";
+			};
+			name = Debug;
+		};
+		BEDFCC2119F6DADA004767DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SimpleCalculatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimpleCalculator.app/SimpleCalculator";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BEDFCBF819F6DADA004767DB /* Build configuration list for PBXProject "SimpleCalculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BEDFCC1A19F6DADA004767DB /* Debug */,
+				BEDFCC1B19F6DADA004767DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BEDFCC1C19F6DADA004767DB /* Build configuration list for PBXNativeTarget "SimpleCalculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BEDFCC1D19F6DADA004767DB /* Debug */,
+				BEDFCC1E19F6DADA004767DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BEDFCC1F19F6DADA004767DB /* Build configuration list for PBXNativeTarget "SimpleCalculatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BEDFCC2019F6DADA004767DB /* Debug */,
+				BEDFCC2119F6DADA004767DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BEDFCBF519F6DADA004767DB /* Project object */;
+}
